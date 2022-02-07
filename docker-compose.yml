@@ -1,0 +1,15 @@
+version: "3.5"
+services:
+  nevad_db:
+    image: mysql:5.7
+    container_name: nevad_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: nevad_db
+      MYSQL_USER: nevad_user
+      MYSQL_PASSWORD: nevad_password
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - 3307:3306
